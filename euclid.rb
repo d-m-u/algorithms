@@ -22,12 +22,13 @@ def gcd3 (v,u,w)
 end
 
 def toBinary (x)
-  while x>0 
-    toBinary(x/2) + (x%2).to_s 
+  if (x>0) 
+    return x.to_s if [0,1].include?(x)
+    toBinary(x/2) + (x%2).to_s
   end
 end 
 
-puts gcd(1073741823,1073741824) 
+puts gcd(1073741823,1073741823) 
 # largest representable as int in ruby fixnum
 # courtesy of SO 
 # http://stackoverflow.com/questions/535721/ruby-max-integer
