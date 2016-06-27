@@ -75,4 +75,17 @@ def primes
   end
 end
 
-primes()
+def twoDArray(m,n)
+  arr= Array.new 
+(0..m).each {|m| 
+    (0..n).each {|n|
+      if gcd(m,n) == 1 
+        arr[m][n] = true
+        puts "true #{arr[m][n]}"
+       else
+        arr[m][n] = false
+      end 
+  }}
+end
+
+puts twoDArray(2,3)
