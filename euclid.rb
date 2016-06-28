@@ -81,30 +81,32 @@ def twoDArray(m,n)
   arr = Hash.new
 
   for m in 0..m do
-    for n in 0..n do
-      if m.gcd(n) == 1
-        arr[[m,n]] = true
-      else
-        arr[[m,n]] = false
+      for n in 0..n do
+          if m.gcd(n) == 1
+            arr[[m,n]] = true
+          else
+            arr[[m,n]] = false
+          end
+        end
       end
-    end
-  end
 
-  for m in 0..m do
-    for n in 0..n do
-      if arr[[m,n]] == true
-        puts "#{m} :m and #{n} :n"
-      end
-    end
-  end
-end
+      for m in 0..m do
+          for n in 0..n do
+              if arr[[m,n]] == true
+                puts "#{m} :m and #{n} :n"
+              end
+            end
+          end
+        end
+    
+
 
 # pseudocode for implementing basic operations of queue with linked list
 # queue is FIFO
 # basic queue operations: enqueue - add element to back of queue, dequeue - remove from front, peek (get element at front without removing it), is_full, is_empty
-# HEAD -- E1 -- E2 -- E3 ... Ez -- Ez 
+# HEAD -- E1 -- E2 -- E3 ... Ez -- Ez
 
-# enqueue - if is_empty, add as first element 
+# enqueue - if is_empty, add as first element
 # if head points to null/ is_empty, set pointer to a
 # if !empty and !full, traverse LL until Ex pointer points to null, set that pointer to a
 # if full, I dunno, throw exception?
@@ -117,8 +119,38 @@ end
 # each node has two pointers - one to the element behind it, one to the element in front
 # insertion
 # if head points to nothing, set headBack to a and set aAhead to head
-# else traverse list till at element immediately before a, set elementBack pointer to a, aAhead to elementBack, aBack to adjacentElement, and adjacentElementAhead to a 
+# else traverse list till at element immediately before a, set elementBack pointer to a, aAhead to elementBack, aBack to adjacentElement, and adjacentElementAhead to a
 
 # deletion
 # if head points to nothing, throw exception
 # else traverse till at element to delete then set element before to point to element after and after to before and both the deleted's to null
+
+# solve the josephus problem with an array
+# N people have decided to commit mass suicide by arranging themselves in a circle and killing the mth person around the circle,
+# closing ranks as each person drops out of the circle. find out the order in which the people die
+
+def josephus(n,m)
+  arr = Array.new
+  order = Array.new
+  current=m
+  for i in 1..n
+    arr[i] = i
+  end
+
+  # pseudocode
+  # starting at current person 5
+  # if arr[current] is nil
+  #    a var called count which keeps track of the 1-5 next people
+  #    count doesn't increase
+  # else it does but also the index can't go past m so double loop?
+  # add the elements to order
+  arr[current] = nil
+  order << current
+
+  puts current
+end
+
+
+
+
+josephus(9,5)
