@@ -80,26 +80,24 @@ end
 def twoDArray(m,n)
   arr = Hash.new
 
-  for m in 0..m do
-      for n in 0..n do
-          if m.gcd(n) == 1
-            arr[[m,n]] = true
-          else
-            arr[[m,n]] = false
-          end
-        end
+  for m in 0..m
+    for n in 0..n
+      if m.gcd(n) == 1
+        arr[[m,n]] = true
+      else
+        arr[[m,n]] = false
       end
+    end
+  end
 
-      for m in 0..m do
-          for n in 0..n do
-              if arr[[m,n]] == true
-                puts "#{m} :m and #{n} :n"
-              end
-            end
-          end
-        end
-    
-
+  for m in 0..m
+    for n in 0..n
+      if arr[[m,n]] == true
+        puts "#{m} :m and #{n} :n"
+      end
+    end
+  end
+end
 
 # pseudocode for implementing basic operations of queue with linked list
 # queue is FIFO
@@ -133,6 +131,7 @@ def josephus(n,m)
   arr = Array.new
   order = Array.new
   current=m
+  count = 1
   for i in 1..n
     arr[i] = i
   end
@@ -147,10 +146,12 @@ def josephus(n,m)
   arr[current] = nil
   order << current
 
-  puts current
+  #begin
+
+  #end while (count < 5)
+
+  puts "order: #{order.to_s}"
 end
-
-
 
 
 josephus(9,5)
