@@ -75,17 +75,50 @@ def primes
   end
 end
 
+# fill in 2d array of bools by setting a[i,j] to true if gcd i,j is 1 and false otherwise
+# uses ruby's built in gcd function
 def twoDArray(m,n)
-  arr= Array.new 
-(0..m).each {|m| 
-    (0..n).each {|n|
-      if gcd(m,n) == 1 
-        arr[m][n] = true
-        puts "true #{arr[m][n]}"
-       else
-        arr[m][n] = false
-      end 
-  }}
+  arr = Hash.new
+
+  for m in 0..m do
+    for n in 0..n do
+      if m.gcd(n) == 1
+        arr[[m,n]] = true
+      else
+        arr[[m,n]] = false
+      end
+    end
+  end
+
+  for m in 0..m do
+    for n in 0..n do
+      if arr[[m,n]] == true
+        puts "#{m} :m and #{n} :n"
+      end
+    end
+  end
 end
 
-puts twoDArray(2,3)
+# pseudocode for implementing basic operations of queue with linked list
+# queue is FIFO
+# basic queue operations: enqueue - add element to back of queue, dequeue - remove from front, peek (get element at front without removing it), is_full, is_empty
+# HEAD -- E1 -- E2 -- E3 ... Ez -- Ez 
+
+# enqueue - if is_empty, add as first element 
+# if head points to null/ is_empty, set pointer to a
+# if !empty and !full, traverse LL until Ex pointer points to null, set that pointer to a
+# if full, I dunno, throw exception?
+
+# dequeue - nothing if empty
+# if is_empty throw exception
+# else return E1, which HEAD is pointing at and set HEAD to point to E2
+
+# pseudocode for implementing insertion and deletion with a doubly linked list
+# each node has two pointers - one to the element behind it, one to the element in front
+# insertion
+# if head points to nothing, set headBack to a and set aAhead to head
+# else traverse list till at element immediately before a, set elementBack pointer to a, aAhead to elementBack, aBack to adjacentElement, and adjacentElementAhead to a 
+
+# deletion
+# if head points to nothing, throw exception
+# else traverse till at element to delete then set element before to point to element after and after to before and both the deleted's to null
