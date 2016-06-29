@@ -81,6 +81,23 @@ josephus(9,5)
 # if head points to nothing, throw exception
 # else traverse till at element to delete then set element before to point to element after and after to before and both the deleted's to null
 
+# 3.7
+# E
+# E A
+# E A S
+# E A           S
+# E A Y         
+# E             A Y
+# E Q
+# E Q U
+# E Q U E 
+# E             Q U E
+# E S T
+#               E S T
+# I 
+#               I
+# O N           O N
+
 # 3.10
 # pseudocode for implementing basic operations of queue with linked list
 # queue is FIFO
