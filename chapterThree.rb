@@ -50,25 +50,18 @@ end
 def josephus(n,m)
   arr = Array.new
   order = Array.new
-  current=m
-  count = 1
   for i in 1..n
     arr[i] = i
   end
 
-  # pseudocode
-  # starting at current person 5
-  # if arr[current] is nil
-  #    a var called count which keeps track of the 1-5 next people
-  #    count doesn't increase
-  # else it does but also the index can't go past m so double loop?
-  # add the elements to order
-  arr[current] = nil
-  order << current
+  arr.compact!
 
-  #begin
-
-  #end while (count < 5)
+  for i in 0..n-1
+    arr= arr.rotate(m-1)
+    order << arr[0]
+    arr[0] = nil
+    arr.compact!
+  end
 
   puts "order: #{order.to_s}"
 end
