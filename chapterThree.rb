@@ -50,6 +50,7 @@ end
 def josephus(n,m)
   arr = Array.new
   order = Array.new
+
   for i in 1..n
     arr[i] = i
   end
