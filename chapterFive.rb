@@ -11,25 +11,26 @@ end
 # 2.3
 # reduction of fraction to lowest terms without recursion
 # if u > v then gcd u,v == gcd v, u-v
-def gcd (v,u)
-  puts "original u: #{u} and v:#{v}"
-  unless u==v
-    until (u ==0) || (v==0)
-      v = [u,v].min
-      u = (u-v).abs
 
-      puts "u: #{u} and v:#{v}"
+def gcd (v,u)
+  if(u>v)
+    puts "original u: #{u} and v:#{v}"
+    until (v >u) || (u==0) || (v==0)
+      v=[u,v].min
+      u=(u-v).abs
     end
-    puts "new u: #{u} and v:#{v}"
+    if(u<v)
+      until (u==v) || (u==0) || (v==0)
+        u=[u,v].min
+        v=(u-v).abs
+      end
+      puts [u,v].max
+    end
   end
-  puts ""
+
+
 end
 
-
-
-
 gcd(6,16)
-gcd(10,16)
-gcd(4,16)
-gcd(1,1)
-gcd(16,10)
+gcd(16,6)
+gcd(6,66)
