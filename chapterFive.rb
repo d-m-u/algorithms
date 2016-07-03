@@ -13,24 +13,20 @@ end
 # if u > v then gcd u,v == gcd v, u-v
 
 def gcd (v,u)
-  if(u>v)
-    puts "original u: #{u} and v:#{v}"
-    until (v >u) || (u==0) || (v==0)
-      v=[u,v].min
-      u=(u-v).abs
-    end
-    if(u<v)
-      until (u==v) || (u==0) || (v==0)
-        u=[u,v].min
-        v=(u-v).abs
-      end
-      puts [u,v].max
+  if(u<v)
+    u,v=v,u
+  end
+
+  until (v >u) || (u==0) || (v==0)
+    v=[u,v].min
+    u=(u-v).abs
+  end
+  if(u<v)
+    until (u==v) || (u==0) || (v==0)
+      u=[u,v].min
+      v=(u-v).abs
     end
   end
 
-
+  puts [u,v].max
 end
-
-gcd(6,16)
-gcd(16,6)
-gcd(6,66)
