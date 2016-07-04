@@ -28,7 +28,13 @@ def recursiveFactorial(n)
   end
 end
 
-puts recursiveFactorial(4)
+#puts recursiveFactorial(4)
+
+def fibonacci(n)
+(1..n).inject(1) {|total, n| total + n }
+end
+
+puts fibonacci(3)
 
 # 2.3
 # reduction of fraction to lowest terms without recursion
