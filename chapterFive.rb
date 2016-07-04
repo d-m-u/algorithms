@@ -18,14 +18,14 @@ def factorial(n)
   (1..n).inject(1) {|product, n| product * n }
 end
 
-puts factorial(4)
+#puts factorial(4)
 
 def recursiveFactorial(n)
-  if n>1
-    n=n-1
-    n *= recursiveFactorial(n)
+  if n==1
+    return n
+  else
+    n *= recursiveFactorial(n-1)
   end
-      puts ""
 end
 
 puts recursiveFactorial(4)
