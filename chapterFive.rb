@@ -11,8 +11,24 @@ def josephus(n,m)
   end
 end
 
-josephus([1,2,3,4,5,6,7,8,9],5)
+#josephus([1,2,3,4,5,6,7,8,9],5)
 
+#nonrecursive but still beautiful
+def factorial(n)
+  (1..n).inject(1) {|product, n| product * n }
+end
+
+puts factorial(4)
+
+def recursiveFactorial(n)
+  if n>1
+    n=n-1
+    n *= recursiveFactorial(n)
+  end
+      puts ""
+end
+
+puts recursiveFactorial(4)
 
 # 2.3
 # reduction of fraction to lowest terms without recursion
