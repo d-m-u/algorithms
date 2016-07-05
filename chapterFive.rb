@@ -31,7 +31,7 @@ end
 #puts recursiveFactorial(4)
 
 def fibonacci(n)
-(1..n).inject(1) {|total, n| total + n }
+  (1..n).inject(1) {|total, n| total + n }
 end
 
 puts fibonacci(3)
@@ -58,3 +58,14 @@ def gcd (v,u)
 
   puts [u,v].max
 end
+
+# 5.8
+def approx(x,y,w,z)
+  if(x-w).abs >1 && (y-z).abs >1
+    puts "calling next with these: #{x} #{y} #{(((x-w).abs)/2.floor)+x} #{((y-z).abs/2.floor)+y}"
+    approx(x,y, (((x-w).abs)/2.floor)+x, ((y-z).abs/2.floor)+y)
+  end
+
+end
+
+puts approx(1,2,5,8)
