@@ -31,10 +31,13 @@ end
 #puts recursiveFactorial(4)
 
 def fibonacci(n)
-  (1..n).inject(1) {|total, n| total + n }
+  if n<=1
+    return 1
+  else
+    n = (fibonacci(n-1) + fibonacci(n-2))
+  end
 end
 
-puts fibonacci(3)
 
 # 2.3
 # reduction of fraction to lowest terms without recursion
@@ -64,8 +67,8 @@ def approx(x,y,w,z)
   if(x-w).abs >1 && (y-z).abs >1
     puts "calling next with these: #{x} #{y} #{(((x-w).abs)/2.floor)+x} #{((y-z).abs/2.floor)+y}"
     approx(x,y, (((x-w).abs)/2.floor)+x, ((y-z).abs/2.floor)+y)
-  end
+        end
 
-end
+        end
 
-puts approx(1,2,5,8)
+        #puts approx(1,2,5,8)
