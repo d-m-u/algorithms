@@ -1,3 +1,5 @@
+require 'benchmark'
+
 # 5.9
 # recursive Josephus implementation
 # N people have decided to commit mass suicide by arranging themselves in a circle and killing the mth person around the circle,
@@ -49,8 +51,21 @@ end
 return a[n]
 end
 
-puts fibonacci(17)
-puts nonRecursiveFibonacci(17)
+
+# puts Benchmark.measure { 100000.times { nonRecursiveFibonacci(17) } }
+# puts Benchmark.measure { 100000.times { fibonacci(17) } }
+
+# 6000 times
+#  0.020000   0.000000   0.020000 (  0.024468)
+#  2.000000   0.010000   2.010000 (  2.022804)
+# 10000 times
+#  0.030000   0.000000   0.030000 (  0.034869)
+#  3.430000   0.020000   3.450000 (  3.476765)
+# 100000
+#  0.270000   0.000000   0.270000 (  0.283190)
+# 33.300000   0.130000  33.430000 ( 33.650293)
+
+# user CPU time, system CPU time, sum of user and system CPU times, elapsed real time
 
 # 2.3
 # reduction of fraction to lowest terms without recursion
