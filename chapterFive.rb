@@ -40,6 +40,11 @@ def fibonacci(n)
   end
 end
 
+def fibonacciWithInject(n)
+
+end
+
+
 #because it makes no sense to make a recursive fibonacci call ...
 def nonRecursiveFibonacci(n)
 a=Array.new
