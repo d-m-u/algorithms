@@ -38,6 +38,19 @@ def fibonacci(n)
   end
 end
 
+#because it makes no sense to make a recursive fibonacci call ...
+def nonRecursiveFibonacci(n)
+a=Array.new
+a[0] = a[1] = 1
+
+for i in 2..n
+a[i]=a[i-1] + a[i-2]
+end
+return a[n]
+end
+
+puts fibonacci(17)
+puts nonRecursiveFibonacci(17)
 
 # 2.3
 # reduction of fraction to lowest terms without recursion
