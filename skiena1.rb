@@ -16,7 +16,6 @@ insertionSort([2,4,6,5,-4,0], 4)
 insertionSort([2,4,6,5,-4,0], 5)
 insertionSort([2,4,6,5,-4,0], 6)
 
-
 # original c:
 # insertion_sort(item s[], int n)
 # {
@@ -83,13 +82,12 @@ insertionSort([2,4,6,5,-4,0], 6)
 
 # two basic classes of summation formulae:
 # arithmetic
-# geometric
+# geometric (free lunch)
 
-# prove that the sum of i from 1 to n where i*i! = (n+1)! -1
-# base case: n=1 and 1*1! = 1 and (2-1) = 1
-# assume general case of n*n! = (n+1)! -1
-# prove case from i to n+1 which is (n+1)*(n+1)! + sum original 1-n
-# ... = (n
+# prove that the sum of i from 1 to n of i*i! = (n+1)! - 1
+# base case: n=1 and 1*1! = 1*1! == (2-1)
+# assume general case of n*n! = (n+1)! - 1
+# prove case from i to n+1 which is (n+1)*(n+1)! == (n+1+1)! - 1 == (n+2)(n+1)(original n factorial
 # (n+1) * (n+1)! + (n+1)! -1
 # (n+1)! * ((n+1) +1) -1
 # (n+2)! -1
@@ -97,7 +95,7 @@ insertionSort([2,4,6,5,-4,0], 6)
 # permutation: ordering
 # subset: selection
 # tree: hierarchical
-# graphs: relationships between arbitraty pairs
+# graphs: relationships between arbitrary pairs
 # points: locations in geometric space
 # polygons: regions in some geometric space
 # strings: sequences of patterns or characters
@@ -108,10 +106,23 @@ insertionSort([2,4,6,5,-4,0], 6)
 # 2. show (a*b) can be less than min(a,b)
 #   a=-2, b=2 (a*b) = -4 and min(a,b) = -2 so (a*b) < min(a,b)
 # 3. show a road network with two points a,b such that the fastest route between a,b is not the shortest
-#
-
-
-
+#   TSP
+# 4. show road network in which the shortest is not the one with the fewest turns
+#   {10,9,5}, {1,2,5,9}, {10,9}
+# 
+# 10. sum i from 1 to n of i = n(n+1)/2 for n>=0
+#   base case: sum i from 1..1 = 1(2)/2 = 1
+#   assume true for general n: sum from i to n is n(n+1)/2
+#   prove for n+1
+#   i from i to n+1 = n+1(n+2)/2 for n>=0
+#   
+# 
+# 19.
+#   yes, hundreds of billions
+# 20.
+#   how does one define a word? millions?
+# 21. 
+#   
 
 
 
