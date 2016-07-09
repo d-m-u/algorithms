@@ -79,6 +79,10 @@ insertionSort([2,4,6,5,-4,0], 6)
 # half the cases have y+1 returned when y%2 ==0
 # for the others, the general case works for all y<= n-1
 
+# two basic classes of summation formulae:
+# arithmetic
+# geometric
+
 
 
 
