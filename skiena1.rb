@@ -66,6 +66,18 @@ insertionSort([2,4,6,5,-4,0], 6)
 
 # induction is the formal proof rather than lack of counterexample
 
+# using induction, prove the following recursive algorithm for incrementing natural numbers:
+# if y==0 return 1 else
+# Increment
+#  if (y%2) ==1 then
+#	return (2*Increment(y/2))
+#  else return y+1
+
+# base case of y==0 return 1
+# assume general case of y=n-1
+# demonstrate y=n works
+# half the cases have y+1 returned when y%2 ==0
+# for the others, the general case works for all y<= n-1
 
 
 
