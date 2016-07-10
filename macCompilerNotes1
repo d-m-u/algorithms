@@ -1,0 +1,42 @@
+compiler translates into machine language
+machine language == object language 
+compiler generates object/target code written in machine language
+if multiple files, multiple object files
+linker then combines object files as well as any needed runtime libraries in single object program
+compiler can instead generate assembly as the object language
+assembly being one step up from machine language
+assembler (itself a kind of compiler) translates assembly into machine language
+much faster usually than interpreter
+
+if handed a pascal program and told to execute it by hand you'd be interpreting it
+read each statement in sequence, mentally do what it says, keeping track of vars on paper
+much easier to debug (can include an interactive source-level debugger, aka a symbolic (symbolic meaning the debugger allows use of symbols from source program) debugger)
+
+jvms complicate delineation
+for our purposes, if it's translated into machine language whether for computer or vm, it's a compiler
+
+translator has front/back ends
+front can be shared as interpreter/compiler
+front end comprised of: parser, scanner, token, source
+parser parses: asks scanner for next token, analyzes token, verifies syntax, determines language of source 
+scanner reads chars of source program sequentially, constructs tokens (low level elements of source language)
+token reads chars from source (more on this later, ch.3)
+
+PARSING == [SYNTAX ANALYSIS]
+SCANNING ==  [LEXICAL ANALYSIS]
+SEMANTIC ANALYSIS == checking to make sure semantic fules aren't broken 
+
+compiler's back end is a code generator
+interpreter's back end is an executor
+front end performs initial translation stage
+front end generates intermediate code and a symbol table in the intermediate tier (for us, an in-memory tree data structure that represents statements of source program)
+compiler's back end processes intermediate code and symbol table to generate machine language version of source
+interpreter's back end processes intermediate code and symbol table to run the program 
+
+intermediate code and symbol table can be language independent
+
+syntax is set of grammar rules that determine if source is valid
+semantics == meaning
+
+
+
