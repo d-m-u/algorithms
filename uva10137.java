@@ -10,13 +10,15 @@ public class uva10137 {
 		for (int k = 1; k <= students; k++) {
 			costs[k] =  Float.parseFloat(args[k]);
 			average += costs[k];
+			System.out.println("costs[k]: " +costs[k]);
 		}
+
 		average /= students;
 		System.out.println(average);
 
 		for (int k = 1; k <= students; k++) {
-			if ((average - costs[k]) < 0 ) { totalRed += costs[k];}
-			if ((average - costs[k]) > 0 ) {totalBlack += costs[k];}
+			if ((average - costs[k]) < 0 ) { totalRed -= (costs[k] - average); System.out.println("redAdd: " + (costs[k] - average) + " costs[k]: " + costs[k]);}
+			if ((average - costs[k]) > 0 ) {totalBlack += (average - costs[k]); System.out.println("blackAdd: " + (average - costs[k]) + " costs[k]: " + costs[k]);}
 		}
 
 		System.out.println("red: " + totalRed + " , black: " + totalBlack);
